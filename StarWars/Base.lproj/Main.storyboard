@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StarWars" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9J-Td-L0n">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="EQz-Db-hTs"/>
+                                </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="People" id="Gvc-rs-dml">
+                                        <barButtonItem key="rightBarButtonItem" title="GET" id="YgI-h4-EsR">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="onGetTapped" destination="BYZ-38-t0r" id="eh5-WA-lGd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wez-dg-N00">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Fa0-nT-hQ5"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="J5P-Fv-wS2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="l9J-Td-L0n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0x3-cg-ES1"/>
+                            <constraint firstAttribute="trailing" secondItem="wez-dg-N00" secondAttribute="trailing" id="LKM-rJ-IG8"/>
+                            <constraint firstAttribute="trailing" secondItem="l9J-Td-L0n" secondAttribute="trailing" id="Mfw-4t-nSs"/>
+                            <constraint firstItem="wez-dg-N00" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Vl1-c0-kR0"/>
+                            <constraint firstItem="l9J-Td-L0n" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="i2U-p7-Sf3"/>
+                            <constraint firstItem="wez-dg-N00" firstAttribute="top" secondItem="l9J-Td-L0n" secondAttribute="bottom" id="oc3-Cw-0VV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wez-dg-N00" secondAttribute="bottom" id="tRw-Sk-PFP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="wez-dg-N00" id="G2O-Q9-8au"/>
+                        <segue destination="7G3-cq-gEc" kind="show" identifier="peopleToDetails" id="Hv8-zi-X7b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="142.57871064467767"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OGq-2E-CWE">
+            <objects>
+                <viewController id="7G3-cq-gEc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kpN-aS-hmJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="lYN-5F-SMs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9oN-Z5-3TB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSz-1N-Ora">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="lEu-13-uA4"/>
+                                </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Details" id="6Mo-yB-EOU">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="fGC-Ro-wxx">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" identifier="detailsToPeople" id="39F-be-fv6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vSz-1N-Ora" secondAttribute="trailing" id="TlO-Lc-AkF"/>
+                            <constraint firstItem="vSz-1N-Ora" firstAttribute="top" secondItem="9oN-Z5-3TB" secondAttribute="top" id="aP5-JE-eTQ"/>
+                            <constraint firstItem="vSz-1N-Ora" firstAttribute="leading" secondItem="9oN-Z5-3TB" secondAttribute="leading" id="cjQ-KP-6lG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BRB-mI-WQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="143"/>
+        </scene>
+    </scenes>
+</document>
